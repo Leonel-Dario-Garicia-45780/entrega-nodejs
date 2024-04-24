@@ -1,0 +1,36 @@
+###
+POST http://localhost:9000/api/operarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "cedula":11223344,
+    "nombre":"Frodo Bolson",
+    "telefono": 3025251108,
+    "direccion":"Carrera 20 # 61BN - 66",
+    "email":"z.meza.g@hotmail.com"
+}
+
+
+###
+GET  http://localhost:9000/api/operarios HTTP/1.1
+
+
+###
+GET  http://localhost:9000/api/operarios/6611964c9f579628891c6faa HTTP/1.1
+
+
+###
+PUT  http://localhost:9000/api/operarios/6611a3c5f0aba94ca20be964 HTTP/1.1
+Content-Type: application/json
+
+{
+    "cedula":11223344,
+    "nombre":"Bilbo Bolson",
+    "telefono": 3025251108,
+    "direccion":"Carrera 20 # 61BN - 66",
+    "email":"z.meza.g@hotmail.com"
+}
+
+
+###
+DELETE http://localhost:9000/api/operarios/661192a2d890ef09e7cbbdbc HTTP/1.1
