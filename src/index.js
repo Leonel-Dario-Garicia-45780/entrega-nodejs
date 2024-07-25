@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors'
 
 import rutaUsuarios from './rutas/ususario_rutas.js'; // Usa la extensión .js para archivos locales
 import rutaProductos from './rutas/producto_rutas.js'
@@ -9,6 +10,8 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 9000;
+
+app.use(cors());
 
 app.use(express.json());
 app.use("/api", rutaUsuarios);
