@@ -11,7 +11,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 9000;
 
-app.use(cors());
+app.use(cors({
+    origin: '*', // Permite cualquier origen
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+}));
 
 app.use(express.json());
 app.use("/api", rutaUsuarios);
