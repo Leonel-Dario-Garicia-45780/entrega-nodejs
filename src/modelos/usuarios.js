@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const usuariosSchemas = mongoose.Schema({
     cedula:{
         type: Number,
-        require: true
+        require: true,
+        unique: true
     },
     nombre:{
         type:String,
@@ -27,5 +28,4 @@ const usuariosSchemas = mongoose.Schema({
     }
 });
 
-/* module.exports = mongoose.model("Usuario",usuariosSchemas);  */
 export default mongoose.model("Usuario",usuariosSchemas);  

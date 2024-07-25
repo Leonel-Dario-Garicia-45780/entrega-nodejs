@@ -1,7 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import rutaUsuarios from './rutas/ususario.js'; // Usa la extensión .js para archivos locales
+
+import rutaUsuarios from './rutas/ususario_rutas.js'; // Usa la extensión .js para archivos locales
+import rutaProductos from './rutas/producto_rutas.js'
 
 dotenv.config();
 
@@ -10,6 +12,7 @@ const port = process.env.PORT || 9000;
 
 app.use(express.json());
 app.use("/api", rutaUsuarios);
+app.use("/api", rutaProductos);
 
 app.get("/", (req, res) => {
     res.send("Bienvenidos a mi aplicación");

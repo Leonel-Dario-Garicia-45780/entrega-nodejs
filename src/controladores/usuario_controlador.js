@@ -1,4 +1,3 @@
-import { json } from "express";
 import Usuario from "../modelos/usuarios.js";
 
 //encryptar contraseña
@@ -12,7 +11,7 @@ export const agregar_usuario = async(req,res)=>{
         const nuevo_usuario = new Usuario({...req.body, contraseña:contraseñacrypt});
         //guardar usuario con contraseña encryptda
         const usuario = await nuevo_usuario.save();
-        res.status(200).json(usuario);
+        res.status(201).json(usuario);
     } catch (error) {
         console.log("error al agregar el ususario " + error);
     }
