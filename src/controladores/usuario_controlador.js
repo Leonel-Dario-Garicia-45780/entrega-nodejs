@@ -43,7 +43,7 @@ export const actualizar_usuario = async(req,res)=>{
     const { cedula, nombre, telefono, direccion, email, contraseña } = req.body;
     try {
         const actualizar = await Usuario.findByIdAndUpdate( //findByIdAndUpdate busca y atualiza a la vez
-            cedula, 
+            {cedula}, 
             {
                 nombre,
                 telefono,
@@ -74,3 +74,13 @@ export const eliminar_usuario_tal = async(req,res)=>{
         res.status(500).json({mensaje: error.message});
     }
 }
+
+
+
+
+
+
+
+
+
+
